@@ -2,11 +2,10 @@
 pragma solidity ^0.8.24;
 
 import "fhevm/lib/TFHE.sol";
-
 import { IConfidentialERC20 } from "../token/ERC20/IConfidentialERC20.sol";
 
 /**
- * @title  ConfidentialVestingWallet
+ * @title  ConfidentialVestingWallet.
  * @notice This contract offers a simple vesting wallet for ConfidentialERC20 tokens.
  *         This is based on the VestingWallet.sol contract written by OpenZeppelin.
  *         see: openzeppelin/openzeppelin-contracts/blob/master/contracts/finance/VestingWallet.sol
@@ -32,7 +31,6 @@ abstract contract ConfidentialVestingWallet {
 
     /// @notice Constant for zero using TFHE.
     /// @dev    Since it is expensive to compute 0, it is stored instead.
-    /* solhint-disable var-name-mixedcase*/
     euint64 internal immutable _EUINT64_ZERO;
 
     /// @notice Total encrypted amount released (to the beneficiary).

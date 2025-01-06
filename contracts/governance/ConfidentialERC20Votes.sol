@@ -9,15 +9,14 @@ import { ConfidentialERC20 } from "../token/ERC20/ConfidentialERC20.sol";
 import { IConfidentialERC20Votes } from "./IConfidentialERC20Votes.sol";
 
 /**
- * @title       ConfidentialERC20Votes
- * @notice      This contract inherits ConfidentialERC20, EIP712, and Ownable2Step.
- *              This is based on the Comp.sol contract written by Compound Labs.
- *              see: compound-finance/compound-protocol/blob/master/contracts/Governance/Comp.sol
- *              It is a governance token used to delegate votes, which can be used by contracts such as
- *              ConfidentialGovernorAlpha.sol.
- *              It uses encrypted votes to delegate the voting power associated
- *              with an account's balance.
- * @dev         The delegation of votes leaks information about the account's encrypted balance to the `delegatee`.
+ * @title   ConfidentialERC20Votes.
+ * @notice  This contract inherits ConfidentialERC20, EIP712, and Ownable2Step.
+ *          This is based on the Comp.sol contract written by Compound Labs.
+ *          see: compound-finance/compound-protocol/blob/master/contracts/Governance/Comp.sol
+ *          It is a governance token used to delegate votes, which can be used by contracts such as
+ *          ConfidentialGovernorAlpha.
+ *          It uses encrypted votes to delegate the voting power associated with an account's balance.
+ * @dev     The delegation of votes leaks information about the account's encrypted balance to the `delegatee`.
  */
 abstract contract ConfidentialERC20Votes is IConfidentialERC20Votes, ConfidentialERC20, EIP712, Ownable2Step {
     /// @notice Returned if the `blockNumber` is higher or equal to the (current) `block.number`.
