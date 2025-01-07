@@ -3,21 +3,20 @@ pragma solidity ^0.8.24;
 
 import "fhevm/lib/TFHE.sol";
 import "fhevm/gateway/GatewayCaller.sol";
-
 import { Ownable2Step, Ownable } from "@openzeppelin/contracts/access/Ownable2Step.sol";
 import { IConfidentialERC20Votes } from "./IConfidentialERC20Votes.sol";
 import { ICompoundTimelock } from "./ICompoundTimelock.sol";
 
 /**
- * @title       ConfidentialGovernorAlpha
- * @notice      This is based on the GovernorAlpha.sol contract written by Compound Labs.
- *              see: compound-finance/compound-protocol/blob/master/contracts/Governance/GovernorAlpha.sol
- *              This decentralized governance system allows users to propose and vote on changes to the protocol.
- *              The contract is responsible for:
- *              - Proposal: A new proposal is made to introduce a change.
- *              - Voting: Users can vote on the proposal, either in favor or against it.
- *              - Quorum: A minimum number of votes (quorum) must be reached for the proposal to pass.
- *              - Execution: Once a proposal passes, it is executed and takes effect on the protocol.
+ * @title   ConfidentialGovernorAlpha.
+ * @notice  This is based on the GovernorAlpha.sol contract written by Compound Labs.
+ *          see: compound-finance/compound-protocol/blob/master/contracts/Governance/GovernorAlpha.sol
+ *          This decentralized governance system allows users to propose and vote on changes to the protocol.
+ *          The contract is responsible for:
+ *          - Proposal: A new proposal is made to introduce a change.
+ *          - Voting: Users can vote on the proposal, either in favor or against it.
+ *          - Quorum: A minimum number of votes (quorum) must be reached for the proposal to pass.
+ *          - Execution: Once a proposal passes, it is executed and takes effect on the protocol.
  */
 abstract contract ConfidentialGovernorAlpha is Ownable2Step, GatewayCaller {
     /// @notice Returned if proposal contains too many changes.

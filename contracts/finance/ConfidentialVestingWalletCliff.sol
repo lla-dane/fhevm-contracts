@@ -2,11 +2,10 @@
 pragma solidity ^0.8.24;
 
 import "fhevm/lib/TFHE.sol";
-
 import { ConfidentialVestingWallet } from "./ConfidentialVestingWallet.sol";
 
 /**
- * @title  ConfidentialVestingWalletCliff
+ * @title  ConfidentialVestingWalletCliff.
  * @notice This contract offers a simple vesting wallet with a cliff for ConfidentialERC20 tokens.
  *         This is based on the VestingWalletCliff.sol contract written by OpenZeppelin.
  *         see: openzeppelin/openzeppelin-contracts/blob/master/contracts/finance/VestingWalletCliff.sol
