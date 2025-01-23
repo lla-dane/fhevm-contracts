@@ -177,6 +177,7 @@ abstract contract ConfidentialERC20 is IConfidentialERC20, IERC20Errors, TFHEErr
     function _unsafeMintNoEvent(address account, uint64 amount) internal virtual {
         euint64 newBalanceAccount = TFHE.add(_balances[account], amount);
         _balances[account] = newBalanceAccount;
+        _totalSupply += amount;
         TFHE.allowThis(newBalanceAccount);
         TFHE.allow(newBalanceAccount, account);
     }
